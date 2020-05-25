@@ -1,0 +1,32 @@
+/*-------------------------------------------------------*/
+/* Service Boxes
+/*-------------------------------------------------------*/
+.service {
+	margin-bottom: 70px;
+
+  &__icon {
+    font-size: 4rem;
+    line-height: 1;
+    color: $main-color;
+    display: inline-block;
+    margin-bottom: 32px;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+  }
+
+  &__text {
+    margin-bottom: 0;
+    color: $text-color;
+  }
+
+  a {
+    color: $text-color;
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+}

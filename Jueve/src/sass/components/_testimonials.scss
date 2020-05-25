@@ -1,0 +1,110 @@
+/*-------------------------------------------------------*/
+/* Testimonials
+/*-------------------------------------------------------*/
+.section-testimonials--large-padding {
+  padding: 140px 0 240px;
+
+  @include bp-lg-up {
+    padding: 320px 0 400px;
+  }  
+}
+
+.testimonial {  
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+
+  &__img {
+    position: relative;
+    overflow: hidden;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    align-self: flex-start;
+  }
+
+  &__body {    
+    padding-left: 40px;
+    flex: 1 0 0;
+  }
+
+  &__text {
+    font-size: 1.125rem;
+    margin-bottom: 28px;
+    display: inline-block;
+    position: relative;
+    color: #fff;
+  } 
+
+  &__name {
+    font-size: 0.9375rem;
+    color: $main-color;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  &__company {
+    color: $meta-color;
+    text-transform: uppercase;
+    font-size: 0.9375rem;
+  }   
+}
+
+
+
+/* Style 2
+-------------------------------------------------------*/
+.testimonial-1 {
+
+  @include bp-md-down {
+    display: block;
+  }
+
+  &__img {
+    border-radius: 0;
+    width: auto;
+    height: auto;  
+
+    @include bp-md-down {
+      width: 100%;
+    }
+  }
+
+  &__img-holder {
+    position: relative;
+    margin-bottom: 22px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      left: -22px;
+      bottom: -22px;
+      background-color: darken( $bg-light, 10% );
+    }
+
+    @include bp-md-down {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__body {
+    padding: 0;
+
+    @include bp-md-up {
+      padding-left: 90px;
+    }
+  } 
+
+  &__text {
+    color: $heading-color;
+    font-size: 2rem;
+  }
+
+  &__name {
+    font-size: 1.25rem;
+  }
+}

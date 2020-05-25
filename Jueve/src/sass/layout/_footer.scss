@@ -1,0 +1,55 @@
+/*-------------------------------------------------------*/
+/* Footer
+/*-------------------------------------------------------*/
+.footer { 
+
+  @include bp-lg-up {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+
+/* Footer Widgets
+-------------------------------------------------------*/
+.footer__widgets {
+  padding: 92px 0 48px;
+
+  .social,
+  a:hover,
+  a:focus {
+    color: #fff;
+  }
+
+  @include bp-lg-up {
+    .row > div:last-child {
+      text-align: right;
+    }
+  }  
+}
+
+
+/* Bottom Footer
+-------------------------------------------------------*/
+.copyright {
+  display: inline-block;
+  color: $text-color;
+  font-size: 0.875rem;
+
+  &-wrap {
+    padding: 40px 0;
+    border-top: 1px solid $border-color-dark;
+  }  
+
+  a {
+   color: inherit;
+
+   &:hover,
+   &:focus {
+    color: $main-color;
+   }
+  }
+}

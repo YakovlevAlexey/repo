@@ -1,0 +1,104 @@
+/*-------------------------------------------------------*/
+/* Widgets
+/*-------------------------------------------------------*/
+.widget {
+  margin-bottom: 48px;
+
+  li {
+    list-style: none;
+  }
+
+  &-title {
+    margin-bottom: 24px;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+}
+
+
+/* Widget About Us
+-------------------------------------------------------*/
+.widget-about-us {
+
+  &__text,
+  &__email,
+  &__phone {
+    display: block;
+    font-size: 1.25rem;
+    margin-bottom: 6px;
+  }
+  
+  &__text,
+  &__phone,
+  a:hover,
+  a:focus {
+    color: #fff;
+  }
+}
+
+
+/* Widget Address
+-------------------------------------------------------*/
+.widget-address {
+  font-size: 1.25rem;
+  color: #fff;
+
+  &__address {
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  &__url {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.9375rem;
+    position: relative;
+    @include transition( .2s ease-in-out );
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 2px;
+      left: 0;
+      width: 100%;
+      background-color: $main-color;
+      @include transition( .2s ease-in-out );
+    }
+
+    &:hover,
+    &:focus {
+
+      &:after {
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+
+/* Widget Tags / Entry Tags
+-------------------------------------------------------*/
+.widget_tag_cloud a,
+.entry__tags a {
+  padding: 12px 18px;
+  line-height: 1;
+  margin: 0 8px 8px 0;
+  font-size: 0.875rem !important;
+  background-color: $bg-light;
+  color: $heading-color;
+  font-family: $heading-font;
+  display: inline-block;
+  float: left;
+  @include transition( all 0.1s ease-in-out );
+
+  &:hover,
+  &:focus {
+    background-color: $bg-dark;
+    color: #fff;
+  }
+}
+
+.tagcloud {
+  overflow: hidden;
+}

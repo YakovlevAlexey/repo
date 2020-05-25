@@ -1,0 +1,140 @@
+/*-------------------------------------------------------*/
+/* Buttons
+/*-------------------------------------------------------*/
+.btn {
+  font-weight: 700;
+  font-family: $body-font;
+  overflow: hidden;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  height: auto;
+  width: auto;
+  border: 0;
+  border-radius: 0;
+  letter-spacing: -0.05em;
+  @include transition(all .2s ease-in-out);
+  color: #fff;
+  background-color: $main-color;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &:hover {
+    color: #fff;
+    box-shadow: 0 12px 20px rgba($main-color, .25);
+    border-color: transparent;
+  }
+
+  &:focus {
+    outline: none;
+    color: #fff;
+  }
+
+  &--lg {
+    font-size: 1.125rem;
+    padding: 15px 40px;
+  }
+
+  &--md {
+    font-size: 0.9375rem;
+    padding: 12px 32px;
+  }
+
+  &--color {
+    background-color: $main-color;
+
+    &:hover {
+      opacity: .92;
+    }
+  }
+
+  &--stroke {
+    border: 2px solid $main-color;
+    background-color: transparent;
+    color: $main-color;
+  }
+
+
+  &--dark {
+    background-color: $bg-dark;
+  }
+
+  &--white {
+    background-color: #fff;
+    color: $heading-color;
+  }
+
+  &--light {
+    background-color: $bg-light;
+    color: $heading-color;
+  }
+
+  &--wide {
+    width: 100%;
+  }
+
+  &--stroke:hover,
+  &--stroke:focus,
+  &--dark:hover,
+  &--dark:focus,
+  &--white:hover,
+  &--white:focus,
+  &--light:hover,
+  &--light:focus {
+    background-color: $main-color;
+    border-color: transparent;
+  }
+
+  i {
+    font-size: .75rem;
+    position: relative;
+    margin-left: 14px;
+    line-height: 1;
+  }
+}
+
+.rounded,
+.rounded:before {
+  border-radius: 70px;
+}
+
+.section-buttons {
+  margin-bottom: 50px;
+
+  a {
+    margin-bottom: 10px;
+  }
+}
+
+
+/* Input Buttons
+-------------------------------------------------------*/
+.btn--button {
+  border: none;
+  margin-bottom: 0;
+  width: auto;
+
+  &.btn--color,
+  &.btn--dark {
+    color: #fff;
+
+    &:focus {
+      background-color: $main-color;
+    }
+  }
+
+  &.btn--wide {
+    width: 100%;
+  }
+}

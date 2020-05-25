@@ -1,0 +1,163 @@
+/*-------------------------------------------------------*/
+/* Single Project
+/*-------------------------------------------------------*/
+
+/* Hero
+-------------------------------------------------------*/
+.project {
+	&__hero {
+		height: 420px;
+		margin-top: $nav-short-height;
+
+		@include bp-lg-up {
+			height: 100vh;
+			margin-top: 0;
+		}
+		
+	}
+
+	&__hero-img-holder {
+		@include background-img-cover;
+		height: 100%;
+		margin: 0;
+	}
+
+	&__hero-info {
+		max-width: 840px;
+		position: absolute;
+		bottom: 90px;
+		padding-right: 20px;
+		padding-top: 40px;
+
+		@include bp-xl-down {
+			bottom: 40px;
+		}
+	}
+
+	&__hero-title {
+		font-size: 3rem;
+		line-height: 1.2;
+
+		@include bp-lg-up {
+			font-size: 4.25rem;
+		}
+	}
+
+	&__hero-description {
+		font-size: 1.2rem;
+		margin-bottom: 0;
+		color: #fff;
+		opacity: 0.7;
+
+		@include bp-lg-up {
+			font-size: 1.625rem;
+		}
+	}	
+}
+
+
+/* Project Description
+-------------------------------------------------------*/
+.project__info-title {
+	font-size: 2.125rem;
+	margin-bottom: 20px;
+}
+
+
+/* Sidebar Info
+-------------------------------------------------------*/
+.project__info-list {
+	list-style: none;
+
+	&-item {
+		margin-bottom: 24px;
+	}
+
+	&-label {
+		margin-bottom: 8px;
+		text-transform: uppercase;
+		font-size: 0.8125rem;
+		display: block;
+	}
+
+	&-title {
+		color: $heading-color;
+		font-weight: 700;
+		letter-spacing: -0.05em;
+	}
+
+	a {
+		&:hover,
+		&:focus {
+			color: $main-color;
+		}
+	}
+}
+
+
+/* Image Full
+-------------------------------------------------------*/
+.project__image-full {
+	max-width: 1548px;
+	width: 100%;
+	margin: auto;
+}
+
+
+/* Process
+-------------------------------------------------------*/
+.project__process {
+	margin-bottom: 48px;
+
+	&-title {
+		margin-bottom: 24px;
+	}
+
+	&-description {
+		margin-bottom: 0;
+	}
+}
+
+
+
+/* Gallery
+-------------------------------------------------------*/
+.project__gallery {
+	&-img-holder {
+		margin-bottom: 40px;
+	}
+
+	&-item {		
+		width: 100%;
+	}
+}
+
+
+/* Related Projects
+-------------------------------------------------------*/
+.related-project {
+	margin-bottom: 56px;
+
+	&__header {
+		margin-bottom: 34px;
+	}
+
+	&__img {
+		width: 100%;
+	}
+
+	&__body {
+		text-align: center;
+	}
+
+	&__title {
+		font-size: 1.75rem;
+	}
+
+	&__category {
+		color: $meta-color;
+		font-size: 0.9375rem;
+		letter-spacing: -0.05em;
+		font-weight: 700;
+	}
+}

@@ -1,0 +1,22 @@
+/*-------------------------------------------------------*/
+/* Call To Action
+/*-------------------------------------------------------*/
+.call-to-action {  
+  position: relative;
+  @include background-img-cover;
+
+  &__title {
+    font-size: 2.25rem;
+    line-height: 1.4;
+    margin-bottom: 16px;
+
+    @include bp-sm-down {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__text {
+    margin-bottom: 32px;
+    color: $heading-color;
+  }
+}

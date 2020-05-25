@@ -1,0 +1,78 @@
+/*-------------------------------------------------------*/
+/* Accordions and Toggles
+/*-------------------------------------------------------*/
+.accordion {
+
+  &__panel {
+    border-bottom: 2px solid $border-color;
+  }
+
+  &:first-child {
+    .accordion__panel {
+      border-top: 2px solid $border-color;
+    }
+  }
+
+  &__heading {
+    position: relative;
+    padding: 0;
+    @include transition ($all);   
+  }
+
+  &__toggle {
+    display: block;
+    width: 12px;
+    height: 2px;
+    background-color: $heading-color;
+    right: 0;
+    top: 50%;
+    @include transform( translateY(-50%) );
+    position: absolute;
+
+    &:after {
+      content: "";
+      display: block;
+      width: 12px;
+      height: 2px;
+      position: absolute;
+      top: 0;
+      background-color: inherit;
+      @include transform( rotate(-90deg) );
+    }    
+  }
+
+  &__body {
+    padding-bottom: 24px;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+
+    @include bp-md-down {
+      font-size: 1.25rem;
+    }
+  }
+
+  &--is-open &__toggle:after {
+    display: none;
+  }
+}
+
+.accordion__link {
+  display: block;
+  position: relative;
+  padding: 18px 0;
+  
+
+  &:hover {
+    .accordion__title {
+      color: $text-color;
+    }    
+  }
+}
+

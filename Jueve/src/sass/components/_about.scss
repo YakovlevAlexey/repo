@@ -1,0 +1,74 @@
+/*-------------------------------------------------------*/
+/* About
+/*-------------------------------------------------------*/
+.about {
+
+	&__holder {	
+		padding: 60px 40px;	
+		background-color: #fff;
+		position: relative;
+		
+	}
+
+	&__img-holder {
+		position: relative;
+		margin-bottom: 0;
+	}
+
+	&__info {
+		margin-top: 40px;
+	}
+	
+
+	@include bp-sm-up {
+		&__holder {
+			display: flex;
+			flex-wrap: nowrap;
+		}
+
+		&__info {
+			margin-left: 40px;
+			margin-top: 0;
+		}
+	}	
+
+	@include bp-lg-up {
+		&__holder {						
+			padding: 80px 40px;
+		}
+
+		&__info {
+			max-width: 600px;			
+		}
+	}
+
+	@media ( min-width: 1280px ) {
+		&__holder {
+			align-items: center;	
+			max-width: 65%;
+			margin-left: auto;
+			padding: 160px 20px 160px 280px;
+		}
+
+		&__img-holder {
+			position: absolute;
+			left: -400px;		
+		}
+	}
+
+	@media ( min-width: 1600px ) {
+		&__holder {
+			padding: 160px 20px 160px 360px;
+		}
+		
+		&__img-holder {
+			left: -400px;
+		}
+	}	
+
+
+
+	
+
+	
+}

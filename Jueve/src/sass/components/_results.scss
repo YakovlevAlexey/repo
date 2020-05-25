@@ -1,0 +1,48 @@
+/*-------------------------------------------------------*/
+/* Results
+/*-------------------------------------------------------*/
+.section-results {
+	padding: 0;
+}
+
+.results {		
+	padding: 40px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+
+	@include bp-lg-up {
+		min-height: 534px;
+	}
+
+	@include bp-xl-up {
+		padding: 46px 72px;
+	}
+
+	&-col {
+		&:not(:last-child) {
+			border-right: 1px solid rgba(#fff, .18);
+		}
+	}
+
+	&__counter,
+	&__text {
+		color: #fff;
+	}
+
+	&__counter {
+		font-size: 3rem;
+		font-weight: 700;
+		margin-bottom: 20px;		
+	}
+
+	&__number,
+	&__suffix {
+		float: left;
+	}
+
+	&__text {
+		margin-bottom: 0;
+	}
+}

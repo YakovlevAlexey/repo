@@ -1,0 +1,316 @@
+/*-------------------------------------------------------*/
+/* Helper classes
+/*-------------------------------------------------------*/
+.clear { clear: both; }
+.oh { overflow: hidden; }
+.ov { overflow: visible; }
+.relative { position: relative; }
+.mobile section { background-attachment: scroll !important; }
+.bg-dark { background-color: $bg-dark; }
+.bg-black { background-color: #000; }
+.bg-light { background-color: $bg-light; }
+.bg-white { background-color: #fff; }
+.bg-color { background-color: $secondary-color; }
+.white { color: #fff; }
+.block { display: block; }
+.left { float: left; }
+.right { float: right; }
+.valign { position: absolute; top: 50%; @include transform (translateY(-50%)); }
+.img-full-width { width: 100%; }
+.uppercase { text-transform: uppercase; letter-spacing: 0.02em; }
+.last { margin-bottom: 0 !important; }
+
+
+/* Slant angles
+-------------------------------------------------------*/
+.angle {
+
+  &:before {
+    position: absolute;
+    z-index: 1;
+    @include transform (skewY(-5deg));
+    width: 100%;
+    left: 0;
+    content: "";
+    background: none repeat scroll 0 0 #fff;
+    min-height: 170px;
+  }
+
+  &--top:before {  
+    margin-top: -232px;  
+  }
+
+  &--bottom:before {
+    margin-top: 183px;
+  }
+
+  &--dark:before {
+    background-color: $bg-dark;
+  }
+
+  @include bp-lg-down {
+
+    &:before {
+      min-height: 130px;
+    }
+
+    &--top:before {
+      margin-top: -164px;
+    }
+
+    &--bottom:before {
+      margin-top: 140px;
+    }
+  }
+}
+
+
+/* Pattern
+-------------------------------------------------------*/
+.bg-pattern,
+.bg-pattern.angle:before {
+  background: url('../img/dark_wall.png');
+}
+
+/* Section Dark / Background Image
+-------------------------------------------------------*/
+.bg-overlay,
+.bg-dark,
+.bg-black,
+.bg-img,
+.bg-color,
+.bg-color-overlay,
+.bg-gradient {
+  h1,h2,h3:not(.section-subtitle):not(.project__title),h4,h5,h6,
+  .section-title,
+  .subtitle,
+  .call-to-action__title,
+  .statistic__number,
+  .statistic__title,
+  .page-title__title,
+  a:hover,
+  a:focus,
+  .entry__meta a:hover,
+  .entry__meta a:focus {
+    color: #fff;
+  }
+
+  p:not(.intro__text):not(.testimonial__text):not(.project__hero-description) {
+    color: lighten( $text-color, 18% );
+  }
+
+  .results-col,
+  .accordion__panel,
+  .accordion:first-child .accordion__panel {
+    border-color: $bg-dark;
+  }
+
+  .accordion__toggle {
+    background-color: #fff;
+  }
+
+  &.angle:not(.bg-pattern):before {
+    background: none repeat scroll 0 0 $bg-dark;
+  }
+
+  .title-underline a {
+    background-image: linear-gradient(to right, #fff 0%, #fff 100%);
+  }
+
+}
+
+
+
+/* Hovers
+-------------------------------------------------------*/
+.hover-shrink {
+
+  &--shrink {
+    overflow: hidden;
+  }
+
+  &--shrink,
+  &--zoom {
+    @include transition( all .2s ease-in-out );
+  }
+
+  &:hover {
+    .hover-shrink--shrink {
+      @include transform( scale( .95 ) );
+    }
+
+    .hover-shrink--zoom  {
+      @include transform( scale( 1.2 ) );
+    }     
+  }
+   
+}
+
+.hover-down {
+  @include transition($all);
+  top: 0;
+  position: relative;
+
+  &:hover {
+    box-shadow: 0px 5px 10px rgba(64, 90, 128, 0.05);
+    top: 2px;
+  }  
+}
+
+.hover-line {
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    background-color: $main-color;
+    @include transition($all);
+  }
+
+  &:hover {
+    &:after {
+      width: 0;
+    }
+  }
+}
+
+
+/* Title Underline
+-------------------------------------------------------*/
+.title-underline {
+  a {
+    background-image: linear-gradient(to right, $heading-color 0%, $heading-color 100%);
+    background-size: 0px 2px;
+    background-position: 0px 95%;
+    background-repeat: no-repeat;
+    transition: all 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
+    padding: 0.5% 0px;
+  }
+
+  &:hover a {
+    background-size: 100% 2px;
+  }
+}
+
+
+
+/* Gradients / Overlays
+-------------------------------------------------------*/
+.bg-gradient-bottom:before {
+  content: "";
+  top: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  @include linear-gradient-from-bottom( rgba( $bg-dark, 1 ), transparent );
+}
+
+.bg-overlay {
+  position: relative;
+
+  &:before {
+    content: "";
+    top: 0;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($bg-dark, 0.81);
+  }
+
+  &--light-68 {
+    &::before {
+      background-color: rgba($bg-dark, 0.68);
+    }
+  }
+
+  &--light {
+    &::before {
+      background-color: rgba($bg-dark, 0.37);
+    }
+  }
+}
+
+
+/* Section Dividers
+-------------------------------------------------------*/
+.top-divider {
+  border-top: 1px solid $border-color;
+}
+
+.bottom-divider {
+  border-bottom: 1px solid $border-color;
+}
+
+
+/* Animations
+-------------------------------------------------------*/
+.animate {
+  position: relative;
+  overflow: hidden;
+
+  &-container {
+    opacity: 0;
+    visibility: hidden;
+    @include transition( .2s ease-in-out .8s );
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &:before {
+    background-color: $bg-light;
+    z-index: 1;
+    @include transform( translateX(-101%) );
+  }
+
+  &--animated {
+    &:before {
+      animation: deothemes-appearing-animation 1s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+    }
+
+    .animate-container {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+@-webkit-keyframes deothemes-appearing-animation {
+  0% {
+    -webkit-transform:translateX(-101%);
+    transform:translateX(-101%);
+  } 50% {
+    -webkit-transform:translateX(0);
+    transform:translateX(0);
+  } 100% {
+    -webkit-transform:translateX(101%);
+    transform:translateX(101%);
+  }
+}
+
+@keyframes deothemes-appearing-animation {
+  0% {
+    -webkit-transform:translateX(-101%);
+    transform:translateX(-101%);
+  } 50% {
+    -webkit-transform:translateX(0);
+    transform:translateX(0);
+  } 100% {
+    -webkit-transform:translateX(101%);
+    transform:translateX(101%);
+  }
+}

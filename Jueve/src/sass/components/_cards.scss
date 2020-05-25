@@ -1,0 +1,42 @@
+/*-------------------------------------------------------*/
+/* Card
+/*-------------------------------------------------------*/
+.card {
+  @include display-flex;
+  flex: 1 0 0%;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+
+  &-row > div {
+    margin-bottom: 48px;
+  }
+
+  &-row .card {
+    height: 100%;
+    margin-bottom: 0;
+  }
+
+  &__img-holder {
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  
+  &__body {
+    background-color: #fff;
+    padding: 40px;
+    flex: 1 1 auto;
+  }
+
+  &--small {
+    .card__body {
+      padding: 24px 16px;
+    }
+
+    .entry__title {
+      font-size: 16px;
+      margin-bottom: 0;
+    }    
+  }
+}

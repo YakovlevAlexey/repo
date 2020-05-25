@@ -1,0 +1,72 @@
+/*-------------------------------------------------------*/
+/* Social Icons
+/*-------------------------------------------------------*/
+.social {
+  display: inline-block;
+  border-radius: 50%;
+  text-align: center;
+  margin-right: 20px;
+  margin-bottom: 6px;
+  font-size: 1rem;
+  color: $text-color;
+  @include transition( all .1s ease-in-out );
+
+  &:hover,
+  &:focus {
+    color: $main-color;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.socials {
+  &__text {
+    display: inline-block;
+    margin-left: 5px;
+  }
+
+  &--rounded {
+    .social {
+      border-radius: 50%;
+      background-color: $bg-dark;
+      color: #fff;
+      width: 30px;
+      height: 30px;
+      margin-right: 8px;
+
+      i {
+        line-height: 30px;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: $main-color;
+      }      
+    }
+  }
+
+  &--large {
+    .social {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+
+      i {
+        line-height: 40px;
+      }
+    }
+  }
+
+  &--colored {
+    .social-facebook { background-color: #39599f; }
+    .social-twitter { background-color: #55ACEE; }
+    .social-linkedin { background-color: #0e76a8; }
+
+    .social:hover,
+    .social:focus {
+      background-color: $bg-dark;
+    }
+  }
+}
